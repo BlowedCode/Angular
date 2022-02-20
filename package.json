@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "deploy": "ng build && bcdeploy"
   },
   "private": true,
   "dependencies": {
@@ -15,13 +16,16 @@
     "@angular/common": "~12.0.3",
     "@angular/compiler": "~12.0.3",
     "@angular/core": "~12.0.3",
+    "@angular/fire": "^7.2.1",
     "@angular/forms": "~12.0.3",
     "@angular/material": "^12.2.13",
     "@angular/platform-browser": "~12.0.3",
     "@angular/platform-browser-dynamic": "~12.0.3",
     "@angular/router": "~12.0.3",
     "bootstrap": "^5.1.3",
-    "rxjs": "~6.6.0",
+    "firebase": "^9.6.7",
+    "rxfire": "^6.0.3",
+    "rxjs": "^6.6.7",
     "tslib": "^2.1.0",
     "zone.js": "~0.11.4"
   },

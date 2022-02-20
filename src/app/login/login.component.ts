@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { IUserData } from '../models';
+import { AuthService } from '../services/auth.service';
+import { FirebaseService } from '../services/firebase.service';
 
 @Component({
   selector: 'app-login',
@@ -6,11 +9,37 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  public Items: string[] = [];
-
-  constructor() { }
+  constructor(private auth: AuthService, private db: FirebaseService) { }
 
   ngOnInit() {
-    for(var x = 0; x < 100; x++) this.Items.push(x.toString());
+
+  }
+
+  testRegister() {
+    this.db.RegisterUser();
+  }
+
+  testLogin() {
+    this.db.GetUsers().subscribe(res => {
+      console.log(res);
+    })
+  }
+
+  testDatabase() {
+    let dto: IUserData = { username: "admin", password: "admin123", email: "blowedcode@gmail.com", dtregister: new Date(), dtlastlogin: new Date() };
+    this.db.UpdatePassword("IYJBB0bVp14BQzFHZter", dto).then(res => {
+      console.log("Update Successful.");
+    }, err => {
+      console.log(err);
+    });
+
+    // this.db.DeleteUser("IYJBB0bVp14BQzFHZter").then(x => { 
+    //   this.db.GetUsers().subscribe(res => {
+    //     console.log(res);
+    //   },
+    //   err => {
+    //     console.log(err);
+    //   })
+    // });
   }
 }

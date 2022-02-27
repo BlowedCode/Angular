@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from './shared/services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -9,5 +10,5 @@ export class AppComponent {
   title = 'BlowedcodeWeb';
   public Navbar: { title: string } = { title: "Applicazione" };
 
-  constructor() {}
+  constructor(public authService: AuthService) {}
 }

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { IUserData } from '../models';
-import { AuthService } from '../services/auth.service';
 import { FirebaseService } from '../services/firebase.service';
 
 @Component({
@@ -9,7 +8,7 @@ import { FirebaseService } from '../services/firebase.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  constructor(private auth: AuthService, private db: FirebaseService) { }
+  constructor(private db: FirebaseService) { }
 
   ngOnInit() {
 

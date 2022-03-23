@@ -23,6 +23,7 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { VerifyEmailComponent } from './components/verify-email/verify-email.com
     SignInComponent,
     SignUpComponent,
     ForgotPasswordComponent,
-    VerifyEmailComponent
+    VerifyEmailComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
@@ -43,8 +45,6 @@ import { VerifyEmailComponent } from './components/verify-email/verify-email.com
     HttpClientModule,
 
     /*Configurazione per Firebase*/
-    // provideFirebaseApp(() => initializeApp(environment.firebase)),
-    // provideFirestore(() => getFirestore()),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFirestoreModule,

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
 import { AuthService } from './shared/services/auth.service';
 
 @Component({
@@ -8,7 +9,13 @@ import { AuthService } from './shared/services/auth.service';
 })
 export class AppComponent {
   title = 'BlowedcodeWeb';
-  public Navbar: { title: string } = { title: "Applicazione" };
 
-  constructor(public authService: AuthService) {}
+  public LoggedIn: boolean = false;
+
+  constructor(router: Router, authService: AuthService) {
+    router.events.subscribe((e) => {
+      if(e instanceof NavigationEnd)
+        this.LoggedIn = authService.isLoggedIn;
+    });
+  }
 }

@@ -4,6 +4,7 @@ import * as auth from 'firebase/auth';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
@@ -37,7 +38,7 @@ export class AuthService {
         this.SetUserData(result.user);
       }).catch((error) => {
         // Gestione errore di Login
-        window.alert(error.message);
+        this.FireError(error.message);
       });
   }
 
@@ -50,7 +51,7 @@ export class AuthService {
         this.SetUserData(result.user);
       }).catch((error) => {
         // Gestione errore di Register
-        window.alert(error.message);
+        this.FireError(error.message);
       });
   }
 
@@ -64,9 +65,9 @@ export class AuthService {
   // Reset Forgot password
   ForgotPassword(passwordResetEmail: string) {
     return this.fireAuth.sendPasswordResetEmail(passwordResetEmail).then(() => {
-        window.alert(this.RESET_PASSWORD_SENT);
+        this.FireWarning(this.RESET_PASSWORD_SENT);
       }).catch((error) => {
-        window.alert(error);
+        this.FireError(error);
       });
   }
 
@@ -89,7 +90,7 @@ export class AuthService {
         this.ngZone.run(() => { this.router.navigate(['dashboard']); });
         this.SetUserData(result.user);
       }).catch((error) => {
-        window.alert(error);
+        this.FireError(error);
       });
   }
 
@@ -115,6 +116,27 @@ export class AuthService {
     return this.fireAuth.signOut().then(() => {
       localStorage.removeItem('user');
       this.router.navigate(['sign-in']);
+    });
+  }
+
+  // Error Fired
+  private FireError(msg: string) {
+    Swal.fire({   
+      title: 'Errore',
+      text: msg,
+      icon: 'error',
+      confirmButtonText: 'Chiudi',
+      confirmButtonColor: '#FB8122'
+    });
+  }
+
+  private FireWarning(msg: string) {
+    Swal.fire({   
+      title: 'Richiesta di Conferma',
+      text: msg,
+      icon: 'warning',
+      confirmButtonText: 'Chiudi',
+      confirmButtonColor: '#FB8122'
     });
   }
 }

@@ -10,4 +10,12 @@ export class SignUpComponent implements OnInit {
   constructor(public authService: AuthService) { }
 
   ngOnInit() { }
+
+  SignUp(Email: string, Password: string) {
+    this.authService.SignUp(Email, Password);
+  }
+
+  GoogleSignUp() {
+    this.authService.GoogleAuth();
+  }
 }

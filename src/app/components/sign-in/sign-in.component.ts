@@ -10,4 +10,12 @@ export class SignInComponent implements OnInit {
   constructor(public authService: AuthService) { }
   
   ngOnInit() { }
+
+  SignIn(User: string, Password: string) {
+    this.authService.SignIn(User, Password);
+  }
+
+  GoogleSignIn() {
+    this.authService.GoogleAuth();
+  }
 }

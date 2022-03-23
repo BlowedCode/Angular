@@ -15,9 +15,6 @@ import { environment } from '../environments/environment'
 /*Configurazioni librerie esterne*/
 import { MatSliderModule } from '@angular/material/slider';
 /*Configurazioni mie librerie e componenti*/
-import { LoginComponent } from './login/login.component';
-import { PageNotFoundComponent } from './pagenotfound/pagenotfound.component';
-import { HomeComponent } from './home/home.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
@@ -28,9 +25,6 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    PageNotFoundComponent,
-    HomeComponent,
     DashboardComponent,
     SignInComponent,
     SignUpComponent,

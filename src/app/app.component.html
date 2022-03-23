@@ -1,6 +1,6 @@
 <nav-bar *ngIf="LoggedIn"></nav-bar>
 
-<div style="position:relative; background-color: #f3f3f3;" 
+<div class="router-container"
   [style.top]="LoggedIn ? '56px' : '0px'" 
   [style.height]="LoggedIn ? 'calc(100vh - 56px)' : '100vh'">
   <router-outlet></router-outlet>

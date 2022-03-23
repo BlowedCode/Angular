@@ -1,23 +1,22 @@
 <!-- Main content -->
-<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+<div>
     <div class="inner-adjust">
-        <div class="pt-3 pb-2 mb-3 border-bottom">
-            <h1 class="h2">Profilo Utente</h1>
+        <div class="border-bottom" style="padding: 15px 0px; margin-bottom: 15px;">
+            <h1 style="margin: 0px;" class="text-light-orange">Profilo Utente</h1>
         </div>
         <!-- Show user data when logged in -->
         <div class="row" *ngIf="authService.userData as user">
             <div class="col-md-12">
                 <div class="media">
-                    <img class="align-self-start mr-5 img-thumbnail rounded-circle"
-                        src="{{(user.photoURL) ? user.photoURL : '/assets/dummy-user.png'}}" alt="{{user.displayName}}">
+                    <img class="align-self-start mr-5 img-thumbnail rounded-circle" src="{{user.photoURL ? user.photoURL : '/assets/dummy-user.png'}}" alt="{{user.displayName}}">
                     <div class="media-body">
-                        <h1>Benvenuto, <strong>{{(user.displayName) ? user.displayName : 'User'}}</strong></h1>
-                        <p>UID: <strong>{{user.uid}}</strong></p>
-                        <p>Email: <strong>{{user.email}}</strong></p>
-                        <p>Account Verificato: <strong>{{user.emailVerified}}</strong></p>
+                        <h1>Benvenuto, <strong class="text-orange">{{user.displayName ? user.displayName : 'User'}}</strong></h1>
+                        <p>UID: <strong class="text-orange">{{user.uid}}</strong></p>
+                        <p>Email: <strong class="text-orange">{{user.email}}</strong></p>
+                        <p>Account Verificato: <strong class="text-orange">{{user.emailVerified ? 'Sì' : 'No'}}</strong></p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</main>
+</div>

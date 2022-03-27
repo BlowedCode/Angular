@@ -1,0 +1,40 @@
+@import 'template.scss';
+
+.enemy-container {
+    margin: 15px;
+    padding: 0px;
+    width: 200px;
+    height: 300px;
+    color: black;
+    background-color: $color-gray;
+
+    cursor: pointer;
+
+    user-select:none;
+    -moz-user-select: none; 
+    -webkit-user-select: none; 
+    -ms-user-select:none; 
+    -o-user-select:none;
+}
+
+.enemy-top {
+    height: 19px;
+    font-weight: bold;
+    border-bottom: 1px solid black;
+    text-align: center;
+}
+
+.enemy-mid {
+    height: 200px;
+    width: 200px;
+    & img {
+        height: 100%;
+        width: 100%;
+    }
+}
+
+.enemy-bot {
+    padding: 5px !important;
+    height: 79px;
+    border-top: 1px solid black;
+}

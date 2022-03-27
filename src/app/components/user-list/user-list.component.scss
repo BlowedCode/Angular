@@ -1,0 +1,27 @@
+@import 'template.scss';
+
+.table-container {
+    border: 2px solid $color-gray !important;
+}
+
+.table-head {
+    min-width: 100px;
+    padding: 4px 8px 4px 8px;
+    background-color: #FFFFFF;
+    color: #000000;
+    font-weight: bold;
+    text-align: center;
+
+    border: 1px solid $color-black; 
+}
+
+.table-cell {
+    min-width: 100px;
+    padding: 4px 8px 4px 8px;
+    background-color: #FFFFFF;
+    color: #000000;
+    font-weight: normal;
+    text-align: center;
+    
+    border: 1px solid $color-black; 
+}

@@ -8,12 +8,19 @@
         <div class="row" *ngIf="authService.userData as user">
             <div class="col-md-12">
                 <div class="media">
-                    <img class="align-self-start mr-5 img-thumbnail rounded-circle" src="{{user.photoURL ? user.photoURL : '/assets/dummy-user.png'}}" alt="{{user.displayName}}">
+                    <div class="align-self-start mr-5 img-thumbnail rounded-circle">
+                        <img class="profile-image" src="{{user.photoURL ? user.photoURL : '/assets/dummy-user.png'}}" alt="{{user.displayName}}">
+                    </div>
                     <div class="media-body">
                         <h1>Benvenuto, <strong class="text-orange">{{user.displayName ? user.displayName : 'User'}}</strong></h1>
                         <p>UID: <strong class="text-orange">{{user.uid}}</strong></p>
                         <p>Email: <strong class="text-orange">{{user.email}}</strong></p>
                         <p>Account Verificato: <strong class="text-orange">{{user.emailVerified ? 'Sì' : 'No'}}</strong></p>
+                    </div>
+                    <div class="media-body">
+                        <input type="text" placeholder="Nome Profilo" #userName>
+                        <input type="text" placeholder="URL Immagine" #userImage>
+                        <button type="button" (click)="UpdateUser(userName.value ? userName.value : user.displayName, userImage.value ? userImage.value : user.photoURL)">Aggiornamento Profilo</button>
                     </div>
                 </div>
             </div>

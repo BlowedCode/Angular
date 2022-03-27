@@ -1,2 +1,3 @@
-export * from './IUserData';
-export * from './UserData';
+export * from './auth/IUserData';
+export * from './auth/UserData';
+export * from './auth/AuthError';

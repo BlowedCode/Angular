@@ -1,0 +1,20 @@
+<div style="height: 100%; padding: 15px;">
+    <table class="table-container">
+        <tr>
+            <th class="table-head">Utente</th>
+            <th class="table-head">UID</th>
+            <th class="table-head">Email</th>
+            <th class="table-head">Immagine</th>
+            <th class="table-head">Verificato</th>
+        </tr>
+        <ng-container *ngFor="let item of Users">
+            <tr>
+                <th class="table-cell">{{item.displayName}}</th>
+                <th class="table-cell">{{item.uid}}</th>
+                <th class="table-cell">{{item.email}}</th>
+                <th class="table-cell">{{item.photoURL}}</th>
+                <th class="table-cell"><i class="fa" [class.fa-check]="item.emailVerified" [class.fa-times]="!item.emailVerified"></i></th>
+            </tr>
+        </ng-container>
+    </table>
+</div>

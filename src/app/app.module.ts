@@ -21,6 +21,8 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { UserListComponent } from './components/user-list/user-list.component';
+import { PickEnemyComponent } from './components/pick-enemy/pick-enemy.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     SignUpComponent,
     ForgotPasswordComponent,
     VerifyEmailComponent,
-    NavbarComponent
+    NavbarComponent,
+    UserListComponent,
+    PickEnemyComponent
   ],
   imports: [
     BrowserModule,

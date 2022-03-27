@@ -1,0 +1,19 @@
+<div class="row" style="margin: 0px; padding: 0px;">
+    <ng-container *ngFor="let item of Enemies">
+        <ng-container *ngTemplateOutlet="Enemy;"></ng-container>
+    </ng-container>
+</div>
+
+<ng-template #Enemy>
+    <div class="enemy-container">
+        <div class="enemy-top">Nemico debole</div>
+        <div class="enemy-mid">
+            <img src="../../../assets/froggy.png" alt="">
+        </div>
+        <div class="enemy-bot">
+            <div>Livello: 1</div>
+            <div>Attacco: 3</div>
+            <div>Difesa: 5</div>
+        </div>
+    </div>
+</ng-template>
